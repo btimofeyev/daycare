@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Away From Home Daycare</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="logo (2).png" alt="Home Away From Home Logo" class="logo" />
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="call-now desktop">
+          <a href="tel:15093617377" class="phone-number">Call Now: (509) 361-7377</a>
+        </div>
+        <div class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <section id="home" class="hero-section">
+      <div class="container">
+        <img
+          src="daycare.jpg"
+          alt="Happy children playing at daycare"
+          class="hero-image"
+        />
+
+        <div class="hero-content">
+          <h2>Welcome to Home Away From Home Daycare</h2>
+          <p>
+            Providing a nurturing and home-like environment for your child.
+            Limited spots available—get in touch to reserve yours today!
+          </p>
+          <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          At Home Away From Home Daycare, we offer a nurturing and loving home
+          environment where your child can learn, grow, and thrive. Our
+          personalized care creates a close-knit, family-like atmosphere,
+          ensuring every child feels loved and supported.
+        </p>
+      </div>
+    </section>
+
+    <section id="programs" class="programs-section">
+      <div class="container">
+        <h2>Our Programs</h2>
+        <div class="program-cards">
+          <div class="program-card">
+            <h3>Infant Care</h3>
+            <p>
+              A cozy and safe environment where your baby receives loving
+              attention and all the comforts of home.
+            </p>
+          </div>
+
+          <div class="program-card">
+            <h3>Toddler Program</h3>
+            <p>
+              Interactive and fun activities designed to nurture early
+              development in a familiar, home-like setting.
+            </p>
+          </div>
+
+          <div class="program-card">
+            <h3>Preschool Program</h3>
+            <p>
+              Hands-on learning in a warm atmosphere that prepares your child
+              for kindergarten through play and education.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+      <div class="container">
+        <h2>What Parents Say</h2>
+        <div class="testimonials">
+          <blockquote>
+            <p>
+              "The home-like setting is perfect for my daughter! She always
+              feels safe, comfortable, and truly loved at Home Away From Home."
+              - <strong>Emily K.</strong>
+            </p>
+          </blockquote>
+
+          <blockquote>
+            <p>
+              "I know my son is in good hands every day. He looks forward to
+              going and always comes home with a smile." -
+              <strong>Sarah B.</strong>
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p class="contact-subheading">
+          Tell us a bit about yourself and your little one!
+        </p>
+
+        <form action="#" method="post" class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="phone">Phone Number (Optional):</label>
+          <input type="tel" id="phone" name="phone" />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="cta-button">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Home Away From Home Daycare. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var menuToggle = document.querySelector(".menu-toggle");
+        var mainNav = document.querySelector(".main-nav");
+
+        menuToggle.addEventListener("click", function () {
+          this.classList.toggle("active");
+          mainNav.classList.toggle("active");
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+          var isClickInside =
+            mainNav.contains(event.target) || menuToggle.contains(event.target);
+          if (!isClickInside && mainNav.classList.contains("active")) {
+            mainNav.classList.remove("active");
+            menuToggle.classList.remove("active");
+          }
+        });
+
+        // Close menu when clicking on a nav link
+        var navLinks = mainNav.querySelectorAll("a");
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            mainNav.classList.remove("active");
+            menuToggle.classList.remove("active");
+          });
+        });
+      });
+    </script>
+
+    <a href="tel:1234567890" class="call-now-button mobile">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+      </svg>
+      Call Now
+    </a>
+  </body>
+</html>
